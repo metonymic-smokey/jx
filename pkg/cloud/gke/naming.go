@@ -28,5 +28,7 @@ func GcpServiceAccountSecretName(serviceName string) string {
 }
 
 func generateName(serviceName string, name string) string {
-	return fmt.Sprintf("%s-%s", serviceName, name)
+	if len(serviceName) > 6 && len(name) > 6 {	
+		return fmt.Sprintf("%s-%s", serviceName, name)
+	}
 }
